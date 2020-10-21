@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.Controller">
+   <children>
+      <Button fx:id="connect" layoutX="172.0" layoutY="26.0" mnemonicParsing="false" onAction="#onClickMethod" prefHeight="33.0" prefWidth="127.0" text="Connect" />
+      <Button fx:id="send" layoutX="458.0" layoutY="105.0" mnemonicParsing="false" onAction="#onClickSendMethod" prefHeight="33.0" prefWidth="127.0" text="Send" />
+      <TextArea fx:id="outputfield" editable="false" layoutX="17.0" layoutY="168.0" prefHeight="215.0" prefWidth="569.0" />
+      <ComboBox fx:id="comboxcommand" layoutX="15.0" layoutY="105.0" onAction="#SelectCommand" prefHeight="33.0" prefWidth="436.0">
+      </ComboBox>
+      <ComboBox fx:id="combox" layoutX="14.0" layoutY="26.0" onAction="#SelectPort" prefHeight="33.0" prefWidth="150.0" />
+      <Label fx:id="labelcomport" layoutX="14.0" layoutY="7.0" text="COM Port" />
+      <Label fx:id="labelcommand" layoutX="15.0" layoutY="84.0" text="Command" />
+      <Label fx:id="labeloutput" layoutX="17.0" layoutY="151.0" text="Output" />
+   </children>
+</AnchorPane>
