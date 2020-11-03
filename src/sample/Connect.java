@@ -7,9 +7,8 @@ import java.nio.charset.StandardCharsets;
 
 class Connect extends Thread {
     SerialPort serialPort;
-    String answer = "";
+    String answer;
     TextArea ta;
-
 
     public Connect(SerialPort serialPort, TextArea ta) {
         this.serialPort = serialPort;
@@ -20,24 +19,24 @@ class Connect extends Thread {
         while (true) {
             while (serialPort.bytesAvailable() == 0) {
                 try {
-                    Thread.sleep(350);
+                    Thread.sleep(1000);
                 } catch (InterruptedException e) {
                     e.printStackTrace();
                 }
             }
             System.out.println("===============================");
-            ta.appendText("======================================/n");
+            ta.appendText("======================================\n");
 
             byte[] inputButes = new byte[serialPort.bytesAvailable()];
             serialPort.readBytes(inputButes, inputButes.length);
             String s = new String(inputButes, StandardCharsets.UTF_8);
-            answer=s;
-            ta.appendText(" message: " + s);
+            answer = s + "\n";
             System.out.println(" message: " + s);
-
-
+            try {
+                Thread.sleep(1000);
+            } catch (InterruptedException e) {
+                e.printStackTrace();
+            }
         }
-
-
     }
 }
